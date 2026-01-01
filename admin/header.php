@@ -17,6 +17,8 @@
     <a href="tarot.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'tarot.php' ? 'active' : ''; ?>">Tarot</a>
     <a href="insights.php"
         class="<?php echo basename($_SERVER['PHP_SELF']) == 'insights.php' ? 'active' : ''; ?>">Insights</a>
+    <a href="import-api.php"
+        class="<?php echo basename($_SERVER['PHP_SELF']) == 'import-api.php' ? 'active' : ''; ?>">📡 Import</a>
     <a href="settings.php"
         class="<?php echo basename($_SERVER['PHP_SELF']) == 'settings.php' ? 'active' : ''; ?>">Settings</a>
 </nav>
