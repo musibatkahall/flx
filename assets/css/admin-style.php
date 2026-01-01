@@ -1,6 +1,5 @@
 <?php
 /* Admin Panel CSS - Play Console Compliant */
-header('Content-Type: text/css');
 ?>
 * {
 margin: 0;
