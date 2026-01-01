@@ -36,8 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['change_password'])) {
 
 // Get system settings
 $db = get_db_connection();
-$stmt = $db->query("SELECT * FROM system_settings ORDER BY setting_key");
-$settings = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+$stmt = $db->query("SELECT setting_key, setting_value FROM system_settings ORDER BY setting_key");
+$settings_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$settings = [];
+foreach ($settings_data as $row) {
+    $settings[$row['setting_key']] = $row['setting_value'];
+}
 
 // Get audit log
 $stmt = $db->prepare("
