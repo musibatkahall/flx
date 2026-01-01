@@ -70,9 +70,9 @@ function admin_login($username, $password)
         SELECT id, username, email, password_hash, role, is_active, 
                login_attempts, lockout_until
         FROM admin_users 
-        WHERE (username = :username OR email = :username) AND is_active = 1
+        WHERE (username = :username OR email = :email) AND is_active = 1
     ");
-    $stmt->execute(['username' => $username]);
+    $stmt->execute(['username' => $username, 'email' => $username]);
     $user = $stmt->fetch();
 
     // Check if user exists

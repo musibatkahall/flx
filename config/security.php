@@ -27,6 +27,7 @@ define('PASSWORD_REQUIRE_SPECIAL', true);
 // Rate Limiting
 define('RATE_LIMIT_API_REQUESTS', 100); // Per minute
 define('RATE_LIMIT_LOGIN_ATTEMPTS', 5); // Per 15 minutes
+define('MAX_LOGIN_ATTEMPTS', 5); // Maximum failed attempts before lockout
 define('RATE_LIMIT_WINDOW', 60); // 1 minute
 define('LOCKOUT_TIME', 900); // 15 minutes
 
