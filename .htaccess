@@ -37,7 +37,8 @@ Header always append X-Frame-Options DENY
 # Disable server signature
 ServerSignature Off
 
-# PHP security settings
-php_flag display_errors Off
+# PHP error settings - DEVELOPMENT MODE
+php_flag display_errors On
 php_flag log_errors On
 php_value error_log logs/error.log
+php_value error_reporting E_ALL
