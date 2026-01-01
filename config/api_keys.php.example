@@ -1,0 +1,43 @@
+<?php
+/**
+ * API Keys Configuration Template
+ * IMPORTANT: Copy this file to api_keys.php and update with your actual keys
+ * api_keys.php is gitignored for security
+ */
+
+// Free API Keys (if you integrate external APIs)
+// Get these from the API providers mentioned in the research
+
+// Aztro API - No key needed (100% free)
+define('AZTRO_API_URL', 'https://aztro.sameerkumar.website/');
+
+// Tarot API - No key needed (100% free)
+define('TAROT_API_URL', 'https://tarotapi.dev/api/v1/');
+
+// Your Custom API Base URL
+define('CUSTOM_API_BASE', 'http://localhost/astroflux/api/v1/');
+
+// Optional: If you want to use external APIs later
+// Uncomment and add your keys
+
+// define('EXTERNAL_HOROSCOPE_API_KEY', 'your-api-key-here');
+// define('EXTERNAL_NUMEROLOGY_API_KEY', 'your-api-key-here');
+
+// API Rate Limiting Settings (already in security.php, but can override here)
+// define('API_RATE_LIMIT_OVERRIDE', 200); // requests per minute
+
+// Notification Settings (for future use - Firebase, email, etc)
+// define('FIREBASE_SERVER_KEY', 'your-firebase-key');
+// define('SMTP_HOST', 'smtp.gmail.com');
+// define('SMTP_PORT', 587);
+// define('SMTP_USER', 'your-email@gmail.com');
+// define('SMTP_PASS', 'your-app-password');
+
+// IMPORTANT NOTES:
+// 1. Never commit api_keys.php to version control
+// 2. All external API calls should respect rate limits
+// 3. Cache API responses when possible
+// 4. Handle API failures gracefully
+// 5. Monitor API usage to avoid quota exhaustion
+
+?>

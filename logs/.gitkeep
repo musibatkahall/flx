@@ -1,0 +1,5 @@
+# AstroFlux Admin Panel Logs
+# This directory stores security and admin action logs
+# DO NOT commit log files to version control
+
+*.log

@@ -1,0 +1,43 @@
+# AstroFlux Admin Panel - Security Configuration
+# Play Console Compliant - No user tracking
+
+# Disable directory browsing
+Options -Indexes
+
+# Force HTTPS (Production only - comment out for local dev)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Protect sensitive files
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "(\.htaccess|\.htpasswd|\.ini|\.log|\.sh|\.sql|composer\.json|composer\.lock)$">
+    Require all denied
+</FilesMatch>
+
+# API URL Rewriting
+RewriteEngine On
+RewriteRule ^api/v1/horoscope$ api/v1/horoscope.php [L,QSA]
+RewriteRule ^api/v1/tarot$ api/v1/tarot.php [L,QSA]
+RewriteRule ^api/v1/insights$ api/v1/insights.php [L,QSA]
+
+# Security Headers
+Header set X-Frame-Options "DENY"
+Header set X-Content-Type-Options "nosniff"
+Header set X-XSS-Protection "1; mode=block"
+Header set Referrer-Policy "no-referrer"
+Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+# Prevent clickjacking
+Header always append X-Frame-Options DENY
+
+# Disable server signature
+ServerSignature Off
+
+# PHP security settings
+php_flag display_errors Off
+php_flag log_errors On
+php_value error_log logs/error.log
